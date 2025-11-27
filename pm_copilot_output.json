@@ -1,0 +1,132 @@
+{
+  "jira": {
+    "tickets_to_create": [
+      {
+        "project_key": "SCRUM",
+        "summary": "Finalize feature-level PRDs for Authentication and Services",
+        "description": "Shiraz is tasked with finalizing the feature-level Product Requirement Documents (PRDs) for both the authentication and service creation modules. Ensure these documents are standardized and ready to be shared and reviewed during the next team meeting.",
+        "issue_type": "Task",
+        "assignee": "Shiraz",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Communicate and promote sidebar navigation changes to Zwar and ZFK",
+        "description": "Shiraz needs to coordinate communication with the Zwar and ZFK teams regarding the new standardized sidebar navigation. The goal is to ensure they are informed about the changes and promote adoption across their respective projects.",
+        "issue_type": "Task",
+        "assignee": "Shiraz",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Present code-refactoring plan for 'create service' and 'schema pages'",
+        "description": "Osama must prepare and present a detailed plan outlining the necessary code refactoring efforts for two key modules: the 'create service' page and the 'schema pages'. This presentation is required to secure alignment and start the implementation phase.",
+        "issue_type": "Task",
+        "assignee": "Osama",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Apply post-merge small technical tweaks",
+        "description": "Following the successful merge of the refactored code for the service and schema pages, Usama is responsible for applying any minor, necessary technical tweaks. These small adjustments ensure stability and polish before deployment.",
+        "issue_type": "Task",
+        "assignee": "Usama",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Perform end-to-end testing before deployment",
+        "description": "Comprehensive end-to-end testing must be completed on the integrated system before any deployment is approved. This is critical to validate that all recent changes, including the refactoring and UX updates, function correctly in a production-like environment.",
+        "issue_type": "Task",
+        "assignee": null,
+        "priority": "High",
+        "labels": [
+          "pm-copilot",
+          "qa"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Propose screen-based UX suggestion for email entry field",
+        "description": "Muhammad needs to develop and present a screen-based suggestion to improve the UX flow for the email entry component. The goal is to optimize the user experience and reduce friction during input.",
+        "issue_type": "Task",
+        "assignee": "Muhammad",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot",
+          "ux"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Implement back button and snack bar on Schema Page",
+        "description": "Muhammad is responsible for updating the Schema Page interface to include two specific components. Implement a working back button functionality and integrate a snack bar notification system for user feedback.",
+        "issue_type": "Task",
+        "assignee": "Muhammad",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot",
+          "ux"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Research and document intuitive user invite flows",
+        "description": "Matt will research and document various patterns for intuitive user invite flows. The goal is to identify best practices and design inspiration to improve the current process of inviting new users to the platform.",
+        "issue_type": "Task",
+        "assignee": "Matt",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot",
+          "research"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Review migrations and coordinate demo messages",
+        "description": "Matt is responsible for reviewing recent database migrations to ensure compatibility and stability. Additionally, he must coordinate the creation and timing of internal or external demo messages related to upcoming feature releases.",
+        "issue_type": "Task",
+        "assignee": "Matt",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Redesign Schema Page layout and navigation system",
+        "description": "Initiate a full redesign of the Schema Page layout to improve clarity and usability. A primary objective is updating the navigation bar to ensure users can intuitively return to the main service dashboard from this page.",
+        "issue_type": "Story",
+        "assignee": null,
+        "priority": "High",
+        "labels": [
+          "pm-copilot",
+          "ux-redesign"
+        ],
+        "due_date": null
+      }
+    ],
+    "tickets_to_update": []
+  }
+}
