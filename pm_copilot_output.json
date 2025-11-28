@@ -1,71 +1,117 @@
 {
+  "meeting_summary": {
+    "overall_status": "On Track",
+    "highlights": [
+      "Standardization efforts initiated for PRDs and ERDs for the EPSOQ project.",
+      "Billing functionality successfully migrated to use checkout sessions.",
+      "Agreement reached to redesign the schema page layout and refine dashboard navigation.",
+      "Code refactoring planned for the create service and schema modules."
+    ],
+    "blockers_overall": [],
+    "decisions": [
+      "Shiraz is tasked with finalizing feature-level PRDs for authentication and core services.",
+      "The schema page layout must be redesigned, and its navigation bar updated to allow return to the service dashboard.",
+      "Sidebar navigation changes must be communicated and promoted across the Zwar and ZFK teams."
+    ],
+    "next_steps": [
+      "Osama to present the code-refactoring plan for review.",
+      "End-to-end testing is required for all new changes before deployment.",
+      "Muhammad to prepare and present a screen-based UX suggestion for email entry.",
+      "Matt to research intuitive invite flows, review existing migrations, and coordinate demo messages."
+    ]
+  },
+  "risks": [],
+  "daily_updates": {
+    "Shiraz": {
+      "yesterday": "Worked on standardizing and drafting initial PRDs/ERDs for EPSOQ.",
+      "today": "Finalize feature-level PRDs for authentication and services and share updated documents. Inform Zwar and ZFK to promote sidebar navigation changes.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Osama": {
+      "yesterday": "Developed the code-refactoring plan for the create service and schema pages modules.",
+      "today": "Present the prepared code-refactoring plan to the team for review.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Usama": {
+      "yesterday": "Worked on merging recent changes (implied).",
+      "today": "Apply small tweaks required after the recent code merge.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Muhammad": {
+      "yesterday": "Reviewed UX issues related to email entry and the schema page.",
+      "today": "Prepare and present a screen-based UX suggestion for email entry. Add a back button and a snack bar notification to the schema page.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Matt": {
+      "yesterday": "General coordination and review tasks (implied).",
+      "today": "Research intuitive invite flows. Review migrations and coordinate necessary demo messages.",
+      "completed_tickets": [],
+      "blockers": []
+    }
+  },
   "jira": {
     "tickets_to_create": [
       {
         "project_key": "SCRUM",
-        "summary": "Finalize feature-level PRDs for Authentication and Services",
-        "description": "Shiraz is tasked with finalizing the feature-level Product Requirement Documents (PRDs) for both the authentication and service creation modules. Ensure these documents are standardized and ready to be shared and reviewed during the next team meeting.",
+        "summary": "Finalize feature-level PRDs for Authentication and Service Management (EPSOQ)",
+        "description": "Shiraz to finalize and update the feature-level Product Requirements Documents (PRDs) and Entity Relationship Diagrams (ERDs) for the Authentication and Services components of EPSOQ. These documents should be shared at the next meeting.",
         "issue_type": "Task",
         "assignee": "Shiraz",
-        "priority": "Medium",
+        "priority": "High",
         "labels": [
-          "pm-copilot"
+          "pm-copilot",
+          "documentation"
         ],
         "due_date": null
       },
       {
         "project_key": "SCRUM",
-        "summary": "Communicate and promote sidebar navigation changes to Zwar and ZFK",
-        "description": "Shiraz needs to coordinate communication with the Zwar and ZFK teams regarding the new standardized sidebar navigation. The goal is to ensure they are informed about the changes and promote adoption across their respective projects.",
+        "summary": "Communicate sidebar navigation changes to Zwar and ZFK teams",
+        "description": "Shiraz needs to inform Zwar and ZFK teams regarding the new sidebar navigation changes to ensure consistent implementation and promotion across all affected systems.",
         "issue_type": "Task",
         "assignee": "Shiraz",
         "priority": "Medium",
         "labels": [
-          "pm-copilot"
+          "pm-copilot",
+          "communication"
         ],
         "due_date": null
       },
       {
         "project_key": "SCRUM",
-        "summary": "Present code-refactoring plan for 'create service' and 'schema pages'",
-        "description": "Osama must prepare and present a detailed plan outlining the necessary code refactoring efforts for two key modules: the 'create service' page and the 'schema pages'. This presentation is required to secure alignment and start the implementation phase.",
+        "summary": "Prepare and Present Code Refactoring Plan (Create Service/Schema Pages)",
+        "description": "Osama to finalize and present the detailed code-refactoring plan focusing on the 'create service' module and the 'schema pages' module to improve maintainability and structure.",
         "issue_type": "Task",
         "assignee": "Osama",
         "priority": "Medium",
         "labels": [
-          "pm-copilot"
+          "pm-copilot",
+          "architecture"
         ],
         "due_date": null
       },
       {
         "project_key": "SCRUM",
-        "summary": "Apply post-merge small technical tweaks",
-        "description": "Following the successful merge of the refactored code for the service and schema pages, Usama is responsible for applying any minor, necessary technical tweaks. These small adjustments ensure stability and polish before deployment.",
-        "issue_type": "Task",
-        "assignee": "Usama",
-        "priority": "Medium",
-        "labels": [
-          "pm-copilot"
-        ],
-        "due_date": null
-      },
-      {
-        "project_key": "SCRUM",
-        "summary": "Perform end-to-end testing before deployment",
-        "description": "Comprehensive end-to-end testing must be completed on the integrated system before any deployment is approved. This is critical to validate that all recent changes, including the refactoring and UX updates, function correctly in a production-like environment.",
-        "issue_type": "Task",
+        "summary": "Redesign Schema Page Layout and Update Navigation",
+        "description": "Redesign the schema page layout to improve user experience and clarity. Update the navigation bar functionality to ensure users can easily return to the primary service dashboard from this page.",
+        "issue_type": "Story",
         "assignee": null,
         "priority": "High",
         "labels": [
           "pm-copilot",
-          "qa"
+          "ux",
+          "frontend"
         ],
         "due_date": null
       },
       {
         "project_key": "SCRUM",
-        "summary": "Propose screen-based UX suggestion for email entry field",
-        "description": "Muhammad needs to develop and present a screen-based suggestion to improve the UX flow for the email entry component. The goal is to optimize the user experience and reduce friction during input.",
+        "summary": "Define UX screen flow for improved email entry",
+        "description": "Muhammad to develop a screen-based suggestion and flow design to improve the user experience for email entry fields.",
         "issue_type": "Task",
         "assignee": "Muhammad",
         "priority": "Medium",
@@ -78,51 +124,27 @@
       {
         "project_key": "SCRUM",
         "summary": "Implement back button and snack bar on Schema Page",
-        "description": "Muhammad is responsible for updating the Schema Page interface to include two specific components. Implement a working back button functionality and integrate a snack bar notification system for user feedback.",
+        "description": "Implement essential usability components on the Schema Page, including a dedicated back button for easy navigation and a snack bar for user feedback/notifications.",
         "issue_type": "Task",
         "assignee": "Muhammad",
         "priority": "Medium",
         "labels": [
           "pm-copilot",
-          "ux"
+          "frontend"
         ],
         "due_date": null
       },
       {
         "project_key": "SCRUM",
-        "summary": "Research and document intuitive user invite flows",
-        "description": "Matt will research and document various patterns for intuitive user invite flows. The goal is to identify best practices and design inspiration to improve the current process of inviting new users to the platform.",
+        "summary": "Research and document intuitive invite flows UX",
+        "description": "Matt to conduct research into industry best practices for intuitive invite flows and document suggestions for implementation.",
         "issue_type": "Task",
         "assignee": "Matt",
         "priority": "Medium",
         "labels": [
           "pm-copilot",
+          "ux",
           "research"
-        ],
-        "due_date": null
-      },
-      {
-        "project_key": "SCRUM",
-        "summary": "Review migrations and coordinate demo messages",
-        "description": "Matt is responsible for reviewing recent database migrations to ensure compatibility and stability. Additionally, he must coordinate the creation and timing of internal or external demo messages related to upcoming feature releases.",
-        "issue_type": "Task",
-        "assignee": "Matt",
-        "priority": "Medium",
-        "labels": [
-          "pm-copilot"
-        ],
-        "due_date": null
-      },
-      {
-        "project_key": "SCRUM",
-        "summary": "Redesign Schema Page layout and navigation system",
-        "description": "Initiate a full redesign of the Schema Page layout to improve clarity and usability. A primary objective is updating the navigation bar to ensure users can intuitively return to the main service dashboard from this page.",
-        "issue_type": "Story",
-        "assignee": null,
-        "priority": "High",
-        "labels": [
-          "pm-copilot",
-          "ux-redesign"
         ],
         "due_date": null
       }

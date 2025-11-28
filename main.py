@@ -48,11 +48,10 @@ def run() -> None:
     jira_result = jira_agent.sync_from_payload(jira_payload)
 
     send_slack_summary(
-        webhook_url=config.slack_webhook_url,
-        meeting_id=config.meetgeek_meeting_id,
-        ai_insights=result.get("ai_insights"),
-        jira_result=jira_result,
-        fallback_summary=transcript_text,
+    webhook_url=config.slack_webhook_url,
+    meeting_id=config.meetgeek_meeting_id,
+    model_output=result,
+    jira_result=jira_result,
     )
 
 
