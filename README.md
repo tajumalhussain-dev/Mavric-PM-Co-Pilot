@@ -1,4 +1,4 @@
-PM Co-Pilot Automation
+PM Co-Pilot Automation <br>
 MeetGeek → Gemini → Jira → Slack | Fully Automated PM Workflow
 
 The PM Co-Pilot is an AI-driven automation system that converts meeting summaries into structured insights, Jira tickets, and Slack updates. It eliminates manual PM effort by transforming raw meeting notes into actionable work.
@@ -7,7 +7,7 @@ The PM Co-Pilot is an AI-driven automation system that converts meeting summarie
 MeetGeek → Gemini AI → Python Pipeline → Jira REST API → Slack Notification
 
 
-Key Features
+<b>Key Features:</b><br>
 
 Automated meeting summary extraction
 
