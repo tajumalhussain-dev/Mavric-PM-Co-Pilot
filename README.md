@@ -22,7 +22,7 @@ JSON snapshots saved for audit/history
 📁 Project Structure
 mavric_pm_copilot/
 │
-├── main.py                     # Orchestrates end-to-end workflow
+├── main.py                     # Orchestrates end-to-end workflow (CLI)
 ├── config.py                   # Loads env variables from .env
 │
 ├── meetgeek/
@@ -32,11 +32,14 @@ mavric_pm_copilot/
 │   └── gemini_client.py        # Sends text to Gemini with strict JSON prompt
 │
 ├── jira/
-│   ├── rest_client.py          # Jira REST API integration
-│   └── mcp_agent.py            # MCP agent (configured but not used for automation)
+│   └── mcp_agent.py            # Jira REST API integration and sync logic
 │
 ├── notifications/
 │   └── slack_notifier.py       # Slack digest message builder & sender
+│
+├── ui/
+│   ├── app.py                  # Streamlit dashboard (make.com-style run view)
+│   └── assets/                 # Optional logos for MeetGeek, Gemini, Jira, Slack
 │
 ├── utils/
 │   ├── logger.py               # Unified logging
@@ -148,14 +151,14 @@ JIRA_API_TOKEN=
 JIRA_BASE_URL=
 JIRA_PROJECT_KEY=SCRUM
 
-▶ How to Run
+▶ How to Run (CLI)
 
 From project root:
 
 python mavric_pm_copilot/main.py
 
 
-Pipeline Steps
+Pipeline Steps (CLI & UI)
 
 Load configuration
 
@@ -170,6 +173,44 @@ Create/update Jira issues via REST API
 Post summary to Slack
 
 Log outcomes
+
+▶ How to Run (Streamlit UI Dashboard)
+
+From project root:
+
+# install dependencies
+pip install -r requirements.txt
+
+# launch dashboard (Windows example using Python launcher)
+py -m streamlit run mavric_pm_copilot/ui/app.py
+
+The UI will open in your browser (by default at http://localhost:8501) and provide:
+
+- A **Run Pipeline** CTA that executes the full workflow
+- A workflow header showing the services in the chain (Config → MeetGeek → Gemini → Jira → Slack)
+- A step-by-step view with progress for:
+  - Config load
+  - MeetGeek summary fetch
+  - Gemini JSON analysis
+  - Jira sync
+  - Slack notification & JSON persistence
+- An expander with the raw MeetGeek transcript/summary
+- An expander with the Gemini JSON output
+- A summarized view of Jira actions (created/updated issues and unresolved assignees)
+- A **Download last JSON output** button for the most recent run
+
+🔧 UI Logos (Optional)
+
+To display real logos in the workflow header instead of emojis:
+
+- Place PNG files in `mavric_pm_copilot/ui/assets/` with the following names:
+  - config.png   – generic configuration icon (optional)
+  - meetgeek.png – MeetGeek logo
+  - gemini.png   – Google Gemini logo
+  - jira.png     – Jira logo
+  - slack.png    – Slack logo
+
+If a file is missing, the UI automatically falls back to an emoji for that service, so the dashboard works even without any custom assets.
 
 📌 Output Example (Slack Digest)
 PM Co-Pilot Automation
@@ -218,15 +259,12 @@ Save every run in a history/ folder.
 
 🌐 Dashboard UI
 
-Frontend to view:
+A Streamlit-based frontend exists under `mavric_pm_copilot/ui/app.py`. It provides:
 
-Risks
-
-Summaries
-
-Action items
-
-Trends
+- A make.com-style run view that shows each pipeline step
+- Service-level visualization (MeetGeek, Gemini, Jira, Slack)
+- Downloadable JSON output for the last run
+- Detailed inspection of model output, risks, and Jira actions
 
 🛠 Troubleshooting
 ❌ JSON Parsing Error

@@ -20,6 +20,7 @@ class AppConfig:
     jira_email: str
     jira_api_token: str
     slack_webhook_url: str
+    jira_base_url: str
     model_name: str = "models/gemini-flash-latest"
     output_path: Path = field(
         default_factory=lambda: Path(__file__).resolve().parent / "pm_copilot_output.json"
@@ -43,6 +44,7 @@ def load_config() -> AppConfig:
     jira_cloud_id = os.getenv("JIRA_CLOUD_ID")
     jira_email = os.getenv("JIRA_EMAIL")
     jira_api_token = os.getenv("JIRA_API_TOKEN")
+    jira_base_url = os.getenv("JIRA_BASE_URL")
     slack_webhook_url = os.getenv("SLACK_WEBHOOK_URL")
 
     missing = {
@@ -55,6 +57,7 @@ def load_config() -> AppConfig:
             "JIRA_EMAIL": jira_email,
             "JIRA_API_TOKEN": jira_api_token,
             "SLACK_WEBHOOK_URL": slack_webhook_url,
+            "JIRA_BASE_URL": jira_base_url,
         }.items()
         if not value
     }
@@ -71,6 +74,7 @@ def load_config() -> AppConfig:
         jira_email=jira_email,
         jira_api_token=jira_api_token,
         slack_webhook_url=slack_webhook_url,
+        jira_base_url=jira_base_url,
     )
 
 

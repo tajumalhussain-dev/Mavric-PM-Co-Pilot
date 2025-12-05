@@ -48,13 +48,13 @@ def run() -> None:
     jira_result = jira_agent.sync_from_payload(jira_payload)
 
     send_slack_summary(
-    webhook_url=config.slack_webhook_url,
-    meeting_id=config.meetgeek_meeting_id,
-    model_output=result,
-    jira_result=jira_result,
+        webhook_url=config.slack_webhook_url,
+        meeting_id=config.meetgeek_meeting_id,
+        model_output=result,
+        jira_result=jira_result,
+        jira_base_url=config.jira_base_url,
     )
-
-
+    
 if __name__ == "__main__":
     run()
-
+    

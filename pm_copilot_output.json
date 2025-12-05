@@ -2,23 +2,33 @@
   "meeting_summary": {
     "overall_status": "On Track",
     "highlights": [
-      "Confirmed progress on ongoing tasks.",
-      "Identified and prioritized the design initiation for the Admin Dashboard page."
+      "Significant progress reported on the dashboard page.",
+      "Redesign schema completion achieved by Ali."
     ],
     "blockers_overall": [],
-    "decisions": [
-      "Agreed to prioritize the design of the Admin Dashboard page."
-    ],
+    "decisions": [],
     "next_steps": [
-      "PM to create a new Jira ticket for Admin Dashboard design.",
-      "Update SCRUM-8 status to Done."
+      "Tajumal to prioritize resolving a specific dashboard design issue.",
+      "New ticket required for implementing dashboard navigation."
     ]
   },
   "risks": [],
   "daily_updates": {
     "Shahid": {
-      "yesterday": "Reported completion of two tickets, including work related to SCRUM-8.",
-      "today": "Focusing on requirements and initial design planning for the Admin Dashboard page.",
+      "yesterday": "Provided updates on dashboard page progress.",
+      "today": "Continuing work on the dashboard page implementation and next steps.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Tajumal": {
+      "yesterday": "Not explicitly stated.",
+      "today": "Focus on resolving a critical design issue identified on the dashboard page.",
+      "completed_tickets": [],
+      "blockers": []
+    },
+    "Ali": {
+      "yesterday": "Completed the redesign schema implementation.",
+      "today": "Requesting a new ticket to begin work on the dashboard navigation structure.",
       "completed_tickets": [],
       "blockers": []
     }
@@ -27,26 +37,31 @@
     "tickets_to_create": [
       {
         "project_key": "SCRUM",
-        "summary": "Design Admin Dashboard Page Layout and Specs",
-        "description": "Create high-fidelity wireframes and design specifications for the main Administrator Dashboard interface, defining key metrics display, navigation structure, and user workflows.",
-        "issue_type": "Story",
-        "assignee": "Shahid",
+        "summary": "Implement New Dashboard Navigation Structure",
+        "description": "Create the necessary frontend and routing structure for the new dashboard navigation experience, as requested after schema completion.",
+        "issue_type": "Task",
+        "assignee": "Ali",
         "priority": "Medium",
         "labels": [
           "pm-copilot",
-          "design",
-          "admin-dashboard"
+          "dashboard"
+        ],
+        "due_date": null
+      },
+      {
+        "project_key": "SCRUM",
+        "summary": "Resolve Dashboard Design Inconsistency",
+        "description": "Address and resolve the identified design issue on the main dashboard page, blocking visual QA.",
+        "issue_type": "Bug",
+        "assignee": "Tajumal",
+        "priority": "Medium",
+        "labels": [
+          "pm-copilot",
+          "dashboard"
         ],
         "due_date": null
       }
     ],
-    "tickets_to_update": [
-      {
-        "issue_key": "SCRUM-8",
-        "comment": "Completed and confirmed in daily standup.",
-        "new_status": "Done",
-        "fields": {}
-      }
-    ]
+    "tickets_to_update": []
   }
 }

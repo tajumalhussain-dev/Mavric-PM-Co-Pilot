@@ -13,7 +13,22 @@ from mavric_pm_copilot.utils.logger import get_logger
 logger = get_logger(__name__)
 
 
-def _format_issue_list(issues: Iterable[JiraAction], limit: int = 5) -> str:
+def _issue_link(issue_key: str, jira_base_url: str | None) -> str:
+    """Return a Slack-formatted clickable link if base URL is provided, else plain key."""
+
+    if jira_base_url:
+        base = jira_base_url.rstrip("/")
+        url = f"{base}/browse/{issue_key}"
+        # Slack link: <url|label>
+        return f"<{url}|{issue_key}>"
+    return issue_key
+
+
+def _format_issue_list(
+    issues: Iterable[JiraAction],
+    jira_base_url: str | None,
+    limit: int = 5,
+) -> str:
     """
     Format a short bullet list of Jira issues for Slack.
 
@@ -24,7 +39,10 @@ def _format_issue_list(issues: Iterable[JiraAction], limit: int = 5) -> str:
         return "None"
 
     display = items[:limit]
-    text = "\n".join(f"• {issue.key}: {issue.summary}" for issue in display)
+    text = "\n".join(
+        f"• {_issue_link(issue.key, jira_base_url)}: {issue.summary}"
+        for issue in display
+    )
     if len(items) > limit:
         text += f"\n…and {len(items) - limit} more"
     return text
@@ -35,6 +53,7 @@ def send_slack_summary(
     meeting_id: str,
     model_output: Dict[str, Any],
     jira_result: JiraSyncResult,
+    jira_base_url: str | None = None,
 ) -> None:
     """Send a structured PM Co-Pilot summary to Slack based on full JSON output."""
 
@@ -112,7 +131,7 @@ def send_slack_summary(
 
     # --- Jira summary ---
     text_lines.append("*Created Issues*")
-    text_lines.append(_format_issue_list(jira_result.created))
+    text_lines.append(_format_issue_list(jira_result.created, jira_base_url))
 
     text_lines.append("\n*Updated Issues*")
     if jira_result.updated:
@@ -126,7 +145,9 @@ def send_slack_summary(
             if action.fields_updated:
                 parts.append("fields(" + ", ".join(action.fields_updated) + ")")
             suffix = " ".join(parts) if parts else ""
-            updated_lines.append(f"• {action.key}: {suffix}".rstrip())
+            updated_lines.append(
+                f"• {_issue_link(action.key, jira_base_url)}: {suffix}".rstrip()
+            )
         text_lines.extend(updated_lines)
     else:
         text_lines.append("None")
